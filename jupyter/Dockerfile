@@ -4,7 +4,9 @@ RUN mkdir src
 
 WORKDIR /src
 
-RUN pip install jupyter
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
 
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8889", "--no-browser", "--allow-root"]
 
