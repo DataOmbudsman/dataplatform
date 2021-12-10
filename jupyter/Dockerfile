@@ -12,3 +12,4 @@ CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8889", "--no-browser", "--al
 
 # build image:                          docker build -t af/lp-jupyter .
 # create container from image:          docker run -p 8889:8889 af/lp-jupyter
+# ... with bind mount:                  docker run -p 8889:8889 --mount type=bind,source="$(pwd)",target=/src af/lp-jupyter
