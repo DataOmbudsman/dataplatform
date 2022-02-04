@@ -1,0 +1,60 @@
+version: '3'
+
+volumes:
+  prometheus_data: {}
+  grafana_data: {}
+
+services:
+
+  prometheus: 
+    image: prom/prometheus:v2.20.0
+    container_name: prometheus
+    volumes:
+      # source:target pairs
+      - ./prometheus:/etc/prometheus  # host volume
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--storage.tsdb.retention.time=48h"
+    restart: unless-stopped
+    expose:
+      - 9090
+    
+    # # For testing only!
+    # ports:
+    #   - "9090:9090"
+
+  grafana: 
+    image: grafana/grafana:7.1.1
+    container_name: grafana
+    volumes:
+      # source:target pairs
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning  # host volume
+    restart: unless-stopped
+    expose:
+      - 3000
+    environment:
+      - GF_SECURITY_ADMIN_USER=${ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - GF_USERS_ALLOW_SIGN_UP=false
+
+    # # For testing only!
+    # ports:
+    #   - "3000:3000"
+
+  caddy: 
+    image: stefanprodan/caddy
+    container_name: caddy
+    volumes:
+      # source:target pairs
+      - ./caddy:/etc/caddy
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=${ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD}
+    ports:
+      - "3000:3000"
+      - "9090:9090"
+  
