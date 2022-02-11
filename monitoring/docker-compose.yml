@@ -57,4 +57,11 @@ services:
     ports:
       - "3000:3000"
       - "9090:9090"
-  
+
+  services:
+    image: af/lp-service
+    container_name: service
+    ports:
+      - "8000:8000"
+    expose:
+      - 8000

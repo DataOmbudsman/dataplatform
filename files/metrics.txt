@@ -1,0 +1,114 @@
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 7834.0
+python_gc_objects_collected_total{generation="1"} 312.0
+python_gc_objects_collected_total{generation="2"} 6.0
+# HELP python_gc_objects_uncollectable_total Uncollectable object found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 231.0
+python_gc_collections_total{generation="1"} 20.0
+python_gc_collections_total{generation="2"} 1.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="7",patchlevel="12",version="3.7.12"} 1.0
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 6.32328192e+08
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 1.0461184e+08
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.64459833019e+09
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 8.59
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 13.0
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1.048576e+06
+# HELP model_information_total How many times model information was asked
+# TYPE model_information_total counter
+model_information_total 13.0
+# HELP model_information_created How many times model information was asked
+# TYPE model_information_created gauge
+model_information_created 1.6445983309535239e+09
+# HELP prediction_total How many times predictions were asked
+# TYPE prediction_total counter
+prediction_total 52.0
+# HELP prediction_created How many times predictions were asked
+# TYPE prediction_created gauge
+prediction_created 1.6445983309535518e+09
+# HELP prediction_output Histogram of -1/1 predictions
+# TYPE prediction_output histogram
+prediction_output_bucket{le="0.005"} 28.0
+prediction_output_bucket{le="0.01"} 28.0
+prediction_output_bucket{le="0.025"} 28.0
+prediction_output_bucket{le="0.05"} 28.0
+prediction_output_bucket{le="0.075"} 28.0
+prediction_output_bucket{le="0.1"} 28.0
+prediction_output_bucket{le="0.25"} 28.0
+prediction_output_bucket{le="0.5"} 28.0
+prediction_output_bucket{le="0.75"} 28.0
+prediction_output_bucket{le="1.0"} 51.0
+prediction_output_bucket{le="2.5"} 51.0
+prediction_output_bucket{le="5.0"} 51.0
+prediction_output_bucket{le="7.5"} 51.0
+prediction_output_bucket{le="10.0"} 51.0
+prediction_output_bucket{le="+Inf"} 51.0
+prediction_output_count 51.0
+prediction_output_sum -5.0
+# HELP prediction_output_created Histogram of -1/1 predictions
+# TYPE prediction_output_created gauge
+prediction_output_created 1.6445983309535835e+09
+# HELP prediction_score Histogram of predictions scores
+# TYPE prediction_score histogram
+prediction_score_bucket{le="0.005"} 37.0
+prediction_score_bucket{le="0.01"} 37.0
+prediction_score_bucket{le="0.025"} 37.0
+prediction_score_bucket{le="0.05"} 37.0
+prediction_score_bucket{le="0.075"} 37.0
+prediction_score_bucket{le="0.1"} 37.0
+prediction_score_bucket{le="0.25"} 37.0
+prediction_score_bucket{le="0.5"} 37.0
+prediction_score_bucket{le="0.75"} 37.0
+prediction_score_bucket{le="1.0"} 37.0
+prediction_score_bucket{le="2.5"} 37.0
+prediction_score_bucket{le="5.0"} 37.0
+prediction_score_bucket{le="7.5"} 37.0
+prediction_score_bucket{le="10.0"} 37.0
+prediction_score_bucket{le="+Inf"} 37.0
+prediction_score_count 37.0
+prediction_score_sum -29.523083006445972
+# HELP prediction_score_created Histogram of predictions scores
+# TYPE prediction_score_created gauge
+prediction_score_created 1.6445983309536557e+09
+# HELP latency Histogram of prediction latency
+# TYPE latency histogram
+latency_bucket{le="0.005"} 0.0
+latency_bucket{le="0.01"} 0.0
+latency_bucket{le="0.025"} 0.0
+latency_bucket{le="0.05"} 14.0
+latency_bucket{le="0.075"} 44.0
+latency_bucket{le="0.1"} 51.0
+latency_bucket{le="0.25"} 51.0
+latency_bucket{le="0.5"} 51.0
+latency_bucket{le="0.75"} 51.0
+latency_bucket{le="1.0"} 51.0
+latency_bucket{le="2.5"} 51.0
+latency_bucket{le="5.0"} 51.0
+latency_bucket{le="7.5"} 51.0
+latency_bucket{le="10.0"} 51.0
+latency_bucket{le="+Inf"} 51.0
+latency_count 51.0
+latency_sum 3.1562204360961914
+# HELP latency_created Histogram of prediction latency
+# TYPE latency_created gauge
+latency_created 1.6445983309537146e+09
