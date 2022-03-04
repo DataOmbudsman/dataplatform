@@ -52,8 +52,8 @@ services:
       - ./caddy:/etc/caddy
     restart: unless-stopped
     environment:
-      - GF_SECURITY_ADMIN_USER=${ADMIN_USER}
-      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
     ports:
       - "3000:3000"
       - "9090:9090"

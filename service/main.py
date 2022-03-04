@@ -13,7 +13,7 @@ app.mount("/metrics", app_metrics)
 counter_model_information = Counter('model_information', 'How many times model information was asked')
 counter_predictions = Counter('prediction', 'How many times predictions were asked')
 histogram_predictions = Histogram('prediction_output', 'Histogram of -1/1 predictions')
-histogram_scores = Histogram('prediction_score', 'Histogram of predictions scores's )
+histogram_scores = Histogram('prediction_score', 'Histogram of predictions scores')
 histogram_latency = Histogram('latency', 'Histogram of prediction latency')
 
 model = load('model.joblib')
