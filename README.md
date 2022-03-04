@@ -38,7 +38,7 @@ ADMIN_USER=admin ADMIN_PASSWORD=admin docker-compose down && docker-compose up -
 
 ### Access
 
-http://localhost:8000/metrics/ — Prometheus raw metrics
-http://localhost:9090/graph — Prometheus console
-http://localhost:8000/docs  — API docs
-http://localhost:3000/?orgId=1 — Grafana
+- http://localhost:8000/metrics/ — Prometheus raw metrics
+- http://localhost:9090/graph — Prometheus console
+- http://localhost:8000/docs  — API docs
+- http://localhost:3000/?orgId=1 — Grafana
